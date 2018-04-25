@@ -6,7 +6,7 @@ describe('Block', () => {
     beforeEach(() => {
         data = 'bar';
         lastBlock = Block.genesis();
-        block = BLock.mineBlock(lastBlock,data)
+        block = Block.mineBlock(lastBlock, data);
     });
 
     it('sets the `data` to match the input', () => {
