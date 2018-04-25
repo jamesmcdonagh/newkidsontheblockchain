@@ -1,0 +1,24 @@
+{
+  "name": "newkidsontheblockchain",
+  "version": "1.0.0",
+  "description": "I will be coding the core blockchain, building an API around the blockchain, creating a dynamic p2p server for multiple contributors, implementing a proof-of-work system to balance users and creating a transaction system for a cryptocurrency",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-test": "nodemon dev-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesmcdonagh/newkidsontheblockchain.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesmcdonagh/newkidsontheblockchain/issues"
+  },
+  "homepage": "https://github.com/jamesmcdonagh/newkidsontheblockchain#readme",
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
+}
