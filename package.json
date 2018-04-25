@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/jamesmcdonagh/newkidsontheblockchain#readme",
   "devDependencies": {
+    "jest": "^22.4.3",
     "nodemon": "^1.17.3"
   },
   "dependencies": {
