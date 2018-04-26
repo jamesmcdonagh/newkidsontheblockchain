@@ -2,6 +2,10 @@
   "ExpandedNodes": [
     ""
   ],
+<<<<<<< HEAD
   "SelectedNode": "\\block.js",
+=======
+  "SelectedNode": "\\blockchain.js",
+>>>>>>> 96ca115e049b1e01cefb5041493f2b1d3fd48a7f
   "PreviewInSolutionExplorer": false
 }
