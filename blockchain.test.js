@@ -51,5 +51,5 @@ describe('Blockchain', () => {
         bc.replaceChain(bc2.chain);
 
         expect(bc.chain).not.toEqual(bc2.chain);
-    })
+    });
 });
