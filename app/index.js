@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const Blockchain = require('../blockchain');
+const P2pserver = require('./p2p-server');
 //if multiple instances of the same application on the same machine, they cant share the same port
 //user can specify a specific port if something else is already running on that port
 const HTTP_PORT = process.env.HTTP_PORT || 3001;
@@ -8,6 +9,7 @@ const HTTP_PORT = process.env.HTTP_PORT || 3001;
 const app = express();
 //make new Blockchain instance
 const bc = new Blockchain();
+const p2pServer = new P2pserver(bc);
 
 app.use(bodyParser.json());
 //first endpoint for our API that interacts with this Blockchain instance
@@ -27,3 +29,4 @@ app.post('/mine', (req, res) => {
 //log a message once the server is running
 app.listen(HTTP_PORT, () => console.log(`Listening on port ${HTTP_PORT}`));
 //app will load and say its listening on 3001
+p2pServer.listen(); //starts websocket server in bc application instance

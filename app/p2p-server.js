@@ -1,8 +1,8 @@
-const websocket = require('ws');
+const Websocket = require('ws');
 
 const P2P_PORT = process.env.P2P_PORT || 5001;
 //will return back an array of website addresses and elements
-const peers = preocess.env.PEERS ? process.env.PEERS.split(',') : [];
+const peers = process.env.PEERS ? process.env.PEERS.split(',') : [];
 
 class P2pServer{
     //takes 1 piece of data as input which is a block chain object
@@ -14,18 +14,31 @@ class P2pServer{
 //listen does the job of starting up the server and creating it
     listen() {
 //to create the web socket server we can use a server class that is contained in the websocket module and is shared statically
+//this gives the blocking application instance the ability to generate a server for other instances to connect to
         const server = new Websocket.Server({ port: P2P_PORT });
         server.on('connection', socket => this.connectSocket(socket)); //pushes socket to array of sockets
+
+        this.connectToPeers();
+
+
         console.log(`Listening for peer-to-peer connections on: ${P2P_PORT}`)
     }
 
+    connectToPeers() {
+        peers.forEach(peer => {
+            // ws:localhost:5001 is what it will look like
+            const socket = new Websocket(peer); //creates socket object
+            
+            socket.on('open', () => this.connectSocket(socket));
+        });
+    }
     connectSocket(socket){
         this.sockets.push(socket);
         console.log("Socket connected");
     }
 }
 
-
+module.exports = P2pServer;
 
 //websocket address' that this websocket should connect to as a peer
 //ws://localhost:5001,ws://localhost:5002
