@@ -35,6 +35,17 @@ class P2pServer{
     connectSocket(socket){
         this.sockets.push(socket);
         console.log("Socket connected");
+
+        this.messageHandler(socket);
+//we use the send method of the socket object, the send method allows us to send an event to the relevant socket containting a stringfy message
+        socket.send(JSON.stringify(this.blockchain.chain));
+    }
+
+    messageHandler(socket){
+        socket.on('message', message => {
+            const data = JSON.parse(message);
+            console.log('data', data);
+        });
     }
 }
 
@@ -45,3 +56,6 @@ module.exports = P2pServer;
 //this is going to be the entire stream for our peers environment variable 
 //HTTP_PORT=3002 P2P_PORT=5003 PEERS=ws:////localhost:5001,ws://localhost:5002 npm run dev
 //this is an instance of the application that will actually connect to some peers on our system
+
+//make sure that these messages actually update our blockchains and they all agree on one
+//because the second instance is sending its small blockchain and the first one but the first instance is sending its large blockchain to the second one
