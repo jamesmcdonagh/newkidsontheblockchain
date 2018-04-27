@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "newkidsontheblockchain",
   "version": "1.0.0",
   "description": "I will be coding the core blockchain, building an API around the blockchain, creating a dynamic p2p server for multiple contributors, implementing a proof-of-work system to balance users and creating a transaction system for a cryptocurrency",
@@ -29,4 +30,38 @@
     "express": "^4.16.3",
     "jest-cli": "^22.4.3"
   }
+=======
+    "name": "newkidsontheblockchain",
+    "version": "1.0.0",
+    "description": "I will be coding the core blockchain, building an API around the blockchain, creating a dynamic p2p server for multiple contributors, implementing a proof-of-work system to balance users and creating a transaction system for a cryptocurrency",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest --watchAll",
+        "dev-test": "nodemon dev-test",
+        "start": "node ./app",
+        "dev": "nodemon ./app"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jamesmcdonagh/newkidsontheblockchain.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/jamesmcdonagh/newkidsontheblockchain/issues"
+    },
+    "homepage": "https://github.com/jamesmcdonagh/newkidsontheblockchain#readme",
+    "devDependencies": {
+        "jest": "^22.4.3",
+        "nodemon": "^1.17.3"
+    },
+    "dependencies": {
+        "body-parser": "^1.18.2",
+        "crypto-js": "^3.1.9-1",
+        "express": "^4.16.3",
+        "jest-cli": "^22.4.3",
+        "npm": "^6.0.0"
+    }
+>>>>>>> d7392abfc22838ad222ff53bcefe436520318b95
 }
