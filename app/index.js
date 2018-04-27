@@ -22,6 +22,9 @@ app.get('/blocks', (req, res) => {
 app.post('/mine', (req, res) => {
     const block = bc.addBlock(req.body.data);
     console.log(`New block added: ${block.toString()}`);
+    //we want to sync the chain at the addition of every new block within this mine function
+    //send a synchronization every time a mine occurs
+    p2pServer.syncChains(); //this second instance should automatically sync its chain with the longer one of the first instance
 
     res.redirect('/blocks');
 });
