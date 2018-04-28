@@ -25,11 +25,20 @@ class Block {
     }
 
     static mineBlock(lastBlock, data) {
-        const timestamp = Date.now();
+        let hash, timestamp;
         const lastHash = lastBlock.hash;
-        const hash = Block.hash(timestamp, lastHash, data);
-
-        return new this(timestamp, lastHash, hash, data);
+        let nonce = 0;
+//this is proof-of-work algorithim in action. it takes a substring of the generated hash and
+//it makes sure that it maches a certain number of leading zeroes up to the blockchains difficulty
+        do {
+            nonce++;
+            timestamp = Date.now();
+            hash = Block.hash(timestamp, lastHash, data, nonce);
+        } while ()hash.substring(0, DIFFICULTY) !== '0'.repeat(DIFFICULTY));
+//this return ensures blcoks are generated with the proper hash value to match our leading zero condition
+//by adding a loop to generate these hash values we're demanding that the node requesting to
+//mine a block is actually spending computational power to find this hash value
+        return new this(timestamp, lastHash, hash, data nonce);
     }
 
     static hash(timestamp, lastHash, data, nonce) {
