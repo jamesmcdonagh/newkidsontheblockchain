@@ -1,6 +1,5 @@
 const SHA256 = require('crypto-js/sha256');
-
-const DIFFICULTY = 4;
+const { DIFFICULTY } = require('../config');
 
 class Block {
     constructor(timestamp, lastHash, hash, data, nonce) {
@@ -34,11 +33,11 @@ class Block {
             nonce++;
             timestamp = Date.now();
             hash = Block.hash(timestamp, lastHash, data, nonce);
-        } while ()hash.substring(0, DIFFICULTY) !== '0'.repeat(DIFFICULTY));
-//this return ensures blcoks are generated with the proper hash value to match our leading zero condition
+        } while (hash.substring(0, DIFFICULTY) !== '0'.repeat(DIFFICULTY));
+//this return ensures blocks are generated with the proper hash value to match our leading zero condition
 //by adding a loop to generate these hash values we're demanding that the node requesting to
 //mine a block is actually spending computational power to find this hash value
-        return new this(timestamp, lastHash, hash, data nonce);
+        return new this(timestamp, lastHash, hash, data, nonce);
     }
 
     static hash(timestamp, lastHash, data, nonce) {
