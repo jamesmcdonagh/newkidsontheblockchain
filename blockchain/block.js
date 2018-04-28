@@ -46,7 +46,7 @@ class Block {
         return new this(timestamp, lastHash, hash, data, nonce, difficulty);
     }
 //START HASH FUNCTIONS
-    static hash(timestamp, lastHash, data, nonce) {
+    static hash(timestamp, lastHash, data, nonce, difficulty) {
         return SHA256(`${timestamp}${lastHash}${data}${nonce}${difficulty}`).toString();
     }
 
@@ -54,12 +54,13 @@ class Block {
         const { timestamp, lastHash, data, nonce, difficulty } = block;
         return Block.hash(timestamp, lastHash, data, nonce, difficulty);
     }
-
+//STOP HASH FUNTIONS
     static adjustDifficulty(lastBlock, currentTime) {
         let { difficulty } = lastBlock;
-        difficulty = lastBlock.timestamp + MINE_RATE > currentTime ? difficulty + 1 : difficulty - 1
+        difficulty = lastBlock.timestamp + MINE_RATE > currentTime ?
+            difficulty + 1 : difficulty - 1
         return difficulty;
     }
-}//STOP HASH FUNTIONS
+}
 
 module.exports = Block;
