@@ -62,7 +62,7 @@ class P2pServer {
 module.exports = P2pServer;
 
 //websocket address' that this websocket should connect to as a peer
-//ws://localhost:5001,ws://localhost:5002
+//ws://localhost:5001,ws://localhost:5002, etc
 //this is going to be the entire stream for our peers environment variable 
 //HTTP_PORT=3002 P2P_PORT=5003 PEERS=ws:////localhost:5001,ws://localhost:5002 npm run dev
 //this is an instance of the application that will actually connect to some peers on our system
