@@ -52,4 +52,4 @@ Used to generate signatures
 Used to verify signatures. Also the public address. Send currency to this address.
 
 ##### Transactions
-Objects that capture the information between 2 Primary components. Input is details of orginal sender - digitial signature and public key. Output is amount and address, also total after transaction. 
+Objects that capture the information between 2 Primary components. They will represent exchanges in our cryptocurrency. Input is details of orginal sender - digitial signature and public key. Output is amount and address, also total after transaction. 
