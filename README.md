@@ -37,5 +37,19 @@ Once a miner has successfully mined a block they will submit their block with th
 #### 51% attack: 
 A scenario where a dishonest miner has more than at aleast 51 percent of the computing power of the entire bc network. thus, they would have the power to replace the current blockchain with one in their favor, with this computing power they could create a generate long enough blockchain that has solved enough proof of work puzzles in order to generate a valid block chain that everyone will have to accept. however the proof of work system makes such a situation so computationally expensive that its absolutely rediculous to spend that costs in order to try and benefit from manipulating the blockchain. at this point in time, in order to take over the bc network in all its collective computing power the cost is estimated to be $6billion dollars. 
 
-### Dynamic Block Difficulty: 
+#### Dynamic Block Difficulty: 
 As more and more peers are added to this blockchain network, blocks will start to be discovered at a faster rate as there will be a higher chance for at least one miner to discover a valid hash at the set difficulty. Therefore we need a dynamic system that adjusts a block change difficulty level as more miners are added to the system. To achieve this we can add a difficulty attribute to each block. In addition we also set a time value called mine rate which represents the rate at which we want each block to be mined. The difficulty adjustment mechanism will work like this: we'll check the time stamp of the newly mined block and compare it to the time set of the previously mined block. if the difference between both time stamps is lower than mine rate then we know that the block was mined to difficulty, therefore add 1. Likewise if the difference in timestamps between our newest block and the block that came before it is bigger than our mine rate, we know that the block was mined too slowly, therefore subtract 1
+
+### Wallets, Keys, & Transactions
+
+#### Wallet
+Wallets store the balance of an individual and they store an individuals keys.
+
+##### Private Key
+Used to generate signatures
+
+##### Public Key
+Used to verify signatures. Also the public address. Send currency to this address.
+
+##### Transactions
+Objects that capture the information between 2 Primary components. Input is details of orginal sender - digitial signature and public key. Output is amount and address, also total after transaction. 
