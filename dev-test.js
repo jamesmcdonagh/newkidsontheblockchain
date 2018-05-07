@@ -5,3 +5,4 @@ const bc = new Blockchain();
 for (let i = 0; i < 10; i++) {
     console.log(bc.addBlock(`Block ${i}`).toString());
 }
+//total length should be about 30 seconds since difficulty is set to 3000ms and i < 10
