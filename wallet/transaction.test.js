@@ -2,7 +2,7 @@ const Transaction = require('./transaction');
 const Wallet = require('./index');
 
 describe('Transaction', () => {
-    let transactions, wallet, recipient, amount;
+    let transaction, wallet, recipient, amount;
 
     beforeEach(() => {
         wallet = new Wallet();

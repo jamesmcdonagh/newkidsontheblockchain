@@ -4,22 +4,25 @@
 Creating a blockchain and cryptocurrency based off BTC whitepaper
 -------------------------------------------------------------------
 
-## DAY 1 - COMPLETE
+## Goal 1 - COMPLETE
 - I will be coding the core blockchain
 
 
-## DAY 2 - COMPLETE
+## Goal 2 - COMPLETE
 - I'm building an API around the blockchain
 
 
-## DAY 3 - COMPLETE
+## Goal 3 - COMPLETE
 - I'm creating a dynamic p2p server for multiple contributors
 
-## Day 4 - COMPLETE
+
+## Goal 4 - COMPLETE
 - I'll be implementing a proof-of-work system to balance users
 
-## DAY 5 - In progress 
-Creating a transaction system for a cryptocurrency
+
+## Goal 5 - In progress 
+- Creating a transaction system for a cryptocurrency
+
 
 # TERMS:
 ### The proof of work system: 
